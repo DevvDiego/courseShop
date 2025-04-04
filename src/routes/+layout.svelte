@@ -1,4 +1,5 @@
 <script>
+    import { onMount } from 'svelte';
 	import '../app.css';
 	
 	let routes = [
@@ -7,9 +8,14 @@
 		{"text":"Cursos", "url":"/courses"},
 	
 	]
+	let selectedRoute = $state("/"); // Url por default
+	
+	onMount(()=>{
+		selectRoute(window.location.pathname) //Cuando el componente se monta, revisamos la url si estaba en alguna otra pag
+	
+	})
 
-    let selectedRoute = $state("/"); // Inicialmente seleccionamos la ruta "/"
-    function selectRoute(url) {
+	function selectRoute(url) {
         selectedRoute = url;
     }
 
