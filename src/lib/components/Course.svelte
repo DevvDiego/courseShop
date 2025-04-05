@@ -6,7 +6,7 @@
 
 {#if skeleton}
 
-    <div class="w-48">
+    <div class="w-full sm:w-56">
         <div class="skeleton h-[200px] mb-2 rounded-2xl"></div>
 
         <div>
@@ -17,27 +17,24 @@
     </div>
 
 {:else}
-    <div class="w-48">
-        
-        <div class="w-full mb-4">
-            <img class="w-full h-full" {src} {alt}>
-        </div>
+    <div class="bg-zinc-950 w-full sm:w-56 rounded-xl">
+           
+        <img class="w-full h-52 m-auto rounded-t-xl object-center object-cover" {src} {alt}>
 
-        <div>
-            <h1 class="w-full my-4">{title}</h1>
-
-            <p>
+        <div class="w-full p-4">
+            <h1 class="my-1 font-bold">
+                {title}
+            </h1>
+ 
+            <p class="text-xs truncate">
                 {summary}
             </p>
 
-            <p class="text-xs mt-3">
+            <p class="mt-1 text-xs">
                 Horario: {startHour}
             </p>
-
-            <button class="bg-blue-900 mt-5 px-3 py-1 rounded-xl">
-                Registrarse
-            </button>
         </div>
+
     </div>
 {/if}
 
