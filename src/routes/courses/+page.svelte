@@ -20,11 +20,16 @@
 </script>
 
 
-<h1 class="text-3xl">
-    asd
+<h1 class="m-5 text-xl">
+    ¿Que quieres aprender hoy?
 </h1>
 
-<div class="flex flex-wrap items-center gap-12">
+
+<div class="
+        m-5 
+        flex flex-row flex-wrap justify-evenly sm:justify-start 
+        gap-4 gap-y-6
+    ">
 
     {#if courses}
 
