@@ -1,22 +1,7 @@
 <script>
     import Course from "$lib/components/Course.svelte";
-    import { onMount } from "svelte";
 
-    let courses = $state( null );
-    
-    onMount(()=>{
-
-        fetch("/courses.json")
-        .then(res=>{
-            return res.json();
-        })
-        .then(json=>{
-            // console.log(json);
-            courses = json;
-        })
-
-    })
-
+    let { data } = $props();
 </script>
 
 
@@ -31,11 +16,13 @@
         gap-4 gap-y-6
     ">
 
-    {#if courses}
+    {#if data}
 
-        {#each courses as course}
+        {#each data.courses as {url, name, summary, startHour} }
 
-            <Course title={course.name} summary={course.summary} startHour={course.startHour} src={"https://picsum.photos/200/200"} />
+            <a href={"/courses/"+url}>
+                <Course title={name} summary={summary} startHour={startHour} src={"https://picsum.photos/200/200"} />
+            </a>
 
         {/each}
 
