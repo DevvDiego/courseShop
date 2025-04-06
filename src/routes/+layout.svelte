@@ -4,11 +4,10 @@
 	
 	let routes = [
 	
-		{"text":"Home", "url":"/"},
 		{"text":"Cursos", "url":"/courses"},
 	
 	]
-	let selectedRoute = $state("/"); // Url por default
+	let selectedRoute = $state("/courses"); // Url por default
 	
 	onMount(()=>{
 		selectRoute(window.location.pathname) //Cuando el componente se monta, revisamos la url si estaba en alguna otra pag
