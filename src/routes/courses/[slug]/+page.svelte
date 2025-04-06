@@ -45,7 +45,7 @@
         </div>
     
         <div class="mb-10 sm:mb-0 sm:w-1/2 max-w-96">
-            <Carrousel class="rounded-2xl" images={data.course.images}/>
+            <Carrousel class="rounded-2xl " images={data.course.images}/>
         </div>
     </div>
 
