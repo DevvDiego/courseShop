@@ -5,6 +5,7 @@
     let notificationText = $state("");
 
     function notificationTimeout(){
+        sendNotification = true;
         setTimeout(()=>{
             sendNotification = false;
         }, 15 * 1000) //mantener por 15 segundos
@@ -21,7 +22,7 @@
         
         // Falta rectificar estado del formulario para mandar notificacion de error
         notificationText = "Enviado correctamente" 
-        sendNotification = true;
+        notificationTimeout();
     }
 
 </script>
