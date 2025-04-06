@@ -1,6 +1,8 @@
 <script>
     import Carrousel from '$lib/components/Carrousel.svelte';
-    import Input from '$lib/components/Input.svelte';
+    import { page } from "$app/stores"
+
+    let slug = $page.params.slug;
 
     let { data } = $props();
 </script>
@@ -11,7 +13,7 @@
     ">
     
     <div class="flex flex-col-reverse sm:flex-row flex-wrap justify-center">
-        <div class=" sm:w-1/2">
+        <div class="sm:pr-5 sm:w-1/2">
         
             <h1 class="text-3xl font-bold mb-2">
                 Curso de {data.course.name}
@@ -22,28 +24,29 @@
                 <br><br>
                 Este curso se impartira a las {data.course.startHour}
             </p>
+            <br><br><br>
             
+            <div>
+                <h2 class="text-lg font-semibold">¿Que aprenderas en este curso?</h2>
+                <ul class="list-disc pl-5">
+                    {#each data.course.what_will_you_learn as skill}
+                        <li>{skill}</li>
+                    {/each}
+                </ul>
+            </div>
+
+            <a href={slug + "/enroll"}>
+                <button  type="button" class="w-3/5 block m-auto my-20 p-2 px-3 rounded-sm bg-indigo-900">
+                    Inscribirme
+                </button>    
+            </a>
+            
+
         </div>
     
         <div class="mb-10 sm:mb-0 sm:w-1/2 max-w-96">
             <Carrousel class="rounded-2xl" images={data.course.images}/>
         </div>
     </div>
-
-    <form class="max-w-md mx-auto my-24 bg-zinc-950 rounded-lg" action="#">
-        <h1 class="py-2 text-center text-lg font-medium w-full">Inscribete ahora</h1>
-
-        <div class="p-2 px-5 flex flex-col">
-            
-            <Input class="mb-3" type="text" text="Correo" name="email" placeholder="email@example.com" />
-            <Input class="mb-10" type="text" text="Nombre" name="name" placeholder="introduce tu nombre" />
-            <button type="submit" class="w-full mt-8 mb-5 p-2 px-3 rounded-sm bg-indigo-900">Inscribirme</button>
-
-        </div>
-
-
-    </form>
-
-
 
 </main>
