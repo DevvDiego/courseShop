@@ -1,7 +1,7 @@
 <script>
 
 
-    let {title, summary, startHour, src, alt, skeleton=null} = $props();
+    let {href, title, summary, startHour, src, alt, skeleton=null} = $props();
 </script>
 
 {#if skeleton}
@@ -17,9 +17,10 @@
     </div>
 
 {:else}
-    <div class="bg-zinc-950 w-full sm:w-56 rounded-xl">
+<a {href} class="block bg-zinc-950 max-w-[250px] w-5/6 rounded-xl">
+
            
-        <img class="w-full h-52 m-auto rounded-t-xl object-center object-cover" {src} {alt}>
+        <img class="w-full h-52 m-auto rounded-t-xl object-center object-fill" {src} {alt}>
 
         <div class="w-full p-4">
             <h1 class="my-1 font-bold">
@@ -35,7 +36,7 @@
             </p>
         </div>
 
-    </div>
+</a>
 {/if}
 
 <style>

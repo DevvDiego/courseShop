@@ -11,18 +11,16 @@
 
 
 <div class="
-        m-5 
-        flex flex-row flex-wrap justify-evenly sm:justify-start 
-        gap-4 gap-y-6
+        w-screen mb-20 sm:mx-10
+        flex flex-row flex-wrap justify-center sm:justify-start
+        gap-5
     ">
 
     {#if data}
 
         {#each data.courses as {url, name, summary, startHour} }
 
-            <a href={"/courses/"+url}>
-                <Course title={name} summary={summary} startHour={startHour} src={"https://picsum.photos/200/200"} />
-            </a>
+            <Course href={"/courses/"+url} title={name} summary={summary} startHour={startHour} src={"https://picsum.photos/200/200"} />
 
         {/each}
 
