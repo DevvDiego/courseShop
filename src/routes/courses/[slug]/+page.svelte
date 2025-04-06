@@ -12,7 +12,7 @@
     
     ">
     
-    <div class="flex flex-col-reverse sm:flex-row flex-wrap justify-center">
+    <div class="flex flex-col-reverse sm:flex-row flex-wrap justify-center items-center">
         <div class="sm:pr-5 sm:w-1/2">
         
             <h1 class="text-3xl font-bold mb-2">
