@@ -7,6 +7,8 @@ export function load() {
 			summary: course.summary,
 			startHour: course.startHour,			
 			url: course.url,
+			coverPhoto: course.coverPhoto,
+			
 
 		}))
 	};

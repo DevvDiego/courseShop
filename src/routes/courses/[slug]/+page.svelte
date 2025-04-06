@@ -36,7 +36,7 @@
             </div>
 
             <a href={slug + "/enroll"}>
-                <button  type="button" class="w-3/5 block m-auto my-20 p-2 px-3 rounded-sm bg-indigo-900">
+                <button  type="button" class="w-3/5 block m-auto my-20 p-2 px-3 rounded-sm bg-indigo-800">
                     Inscribirme
                 </button>    
             </a>
